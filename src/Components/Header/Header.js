@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './Header.css'
 const Header = () => {
     return (
@@ -10,15 +11,12 @@ const Header = () => {
             data-easing="ease"
             data-easing2="ease"
             role="banner">
+
             <div className="container-default w-container">
                 <div className="header-contact-wrapper">
                     <a href="tel:(284)587-7800" className="header-contact-link"
-                    >(284) 587 - 7800</a
-                    ><a
-                        href="mailto:contact@doctor.com"
-                        className="header-contact-link last"
-                    >contact@doctor.com</a
-                    >
+                    >01878517664</a
+                    ><a href="/" className="header-contact-link last">contact@doctor.com</a>
                 </div>
                 <div className="divider header-divider"></div>
                 <div className="header-wrapper">
@@ -37,31 +35,29 @@ const Header = () => {
                         <nav role="navigation" className="nav-menu w-nav-menu">
                             <ul className="header-navigation">
                                 <li className="nav-item-wrapper">
-                                    <a href="/" aria-current="page" className="nav-link w--current"
-                                    >Home</a
-                                    >
+                                    <NavLink to="/" className="nav-link ">Home</NavLink>
                                 </li>
 
                                 <li className="nav-item-wrapper">
-                                    <a href="/about" className="nav-link">About</a>
+                                    <NavLink to="/about" className="nav-link ">About</NavLink>
                                 </li>
                                 <li className="nav-item-wrapper">
-                                    <a href="/services" className="nav-link">Services</a>
+                                    <NavLink to="/services" className="nav-link ">Services</NavLink>
                                 </li>
                                 <li className="nav-item-wrapper">
-                                    <a href="/contact" className="nav-link">Contact</a>
+                                    <NavLink to="/contact-us" className="nav-link ">Contact Us</NavLink>
                                 </li>
                                 <li className="nav-item-wrapper header-button-mobile">
-                                    <a href="/plans" className="button-primary bg-secondary-1 header-button-mobile w-button mb-1" >Sign Up</a>
-                                    <a href="/plans" className="button-primary bg-secondary-1 header-button-mobile w-button" >Log In</a>
+                                    <NavLink to="/signup" className="button-primary bg-secondary-1 header-button-mobile w-button mb-1">Sign Up</NavLink>
+                                    <NavLink to="/login" className="button-primary bg-secondary-1 header-button-mobile w-button mb-1">Log In</NavLink>
                                 </li>
                             </ul>
                         </nav>
                     </div>
                     <div className="split-content header-left">
 
-                        <a href="/plans" className="button-primary bg-secondary-1 header-button w-button me-1" >Sign Up</a>
-                        <a href="/plans" className="button-primary bg-secondary-1 header-button w-button" >Log In</a>
+                        <NavLink to="/signup" className="button-primary bg-secondary-1 header-button w-button me-1">Sign Up</NavLink>
+                        <NavLink to="/login" className="button-primary bg-secondary-1 header-button w-button ">Log In</NavLink>
 
                         <div
                             className="menu-button w-nav-button"
