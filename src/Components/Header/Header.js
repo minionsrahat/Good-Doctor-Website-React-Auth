@@ -41,7 +41,7 @@ const Header = () => {
                                     >Home</a
                                     >
                                 </li>
-                             
+
                                 <li className="nav-item-wrapper">
                                     <a href="/about" className="nav-link">About</a>
                                 </li>
@@ -52,25 +52,19 @@ const Header = () => {
                                     <a href="/contact" className="nav-link">Contact</a>
                                 </li>
                                 <li className="nav-item-wrapper header-button-mobile">
-                                    <a
-                                        href="/plans"
-                                        className="button-primary bg-secondary-1 header-button-mobile w-button"
-                                    >Book Now</a
-                                    >
+                                    <a href="/plans" className="button-primary bg-secondary-1 header-button-mobile w-button mb-1" >Sign Up</a>
+                                    <a href="/plans" className="button-primary bg-secondary-1 header-button-mobile w-button" >Log In</a>
                                 </li>
                             </ul>
                         </nav>
                     </div>
                     <div className="split-content header-left">
-                     
-                        <a
-                            href="/plans"
-                            className="button-primary bg-secondary-1 header-button w-button"
-                        >Book Now</a
-                        >
+
+                        <a href="/plans" className="button-primary bg-secondary-1 header-button w-button me-1" >Sign Up</a>
+                        <a href="/plans" className="button-primary bg-secondary-1 header-button w-button" >Log In</a>
+
                         <div
                             className="menu-button w-nav-button"
-                            
                             aria-label="menu"
                             role="button"
                             tabIndex="0"
