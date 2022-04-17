@@ -74,7 +74,6 @@ const ServiceList = () => {
               </div>
               <div
                 data-w-id="d3d0c33c-ee5b-bc2e-9478-d7055e19aa77"
-              
                 role="listitem"
                 class="card-service-item w-dyn-item"
               >

@@ -1,0 +1,44 @@
+[
+    {
+        "id": "1",
+        "service_name": "Pediatrics",
+        "des": "Lorem ipsum dolor sit amet, consectetur adipiscing elitTristique libero viverra ultricies commodo",
+        "img":"https://assets.website-files.com/601819adb4e32792f49cb4f2/6018923503ea2e48b94fed5f_icon-2-service-doctor-template.svg",
+        "price": 100
+    },
+    {
+        "id": "2",
+        "service_name": "General",
+        "des": "Lorem ipsum dolor sit amet, consectetur adipiscing elitTristique libero viverra ultricies commodo",
+        "img":"https://assets.website-files.com/601819adb4e32792f49cb4f2/60189629d9c89fdf95fc6209_icon-1-service-doctor-template.svg",
+        "price": 100
+    },
+    {
+        "id": "3",
+        "service_name": "Nutrition",
+        "des": "Lorem ipsum dolor sit amet, consectetur adipiscing elitTristique libero viverra ultricies commodo",
+        "img":"https://assets.website-files.com/601819adb4e32792f49cb4f2/601891f207f3790dc88a5f25_icon-3-service-doctor-template.svg",
+        "price": 100
+    },
+     {
+        "id": "4",
+        "service_name": "Cardiology",
+        "des": "Lorem ipsum dolor sit amet, consectetur adipiscing elitTristique libero viverra ultricies commodo",
+        "img":"https://assets.website-files.com/601819adb4e32792f49cb4f2/601891de197503761bd86d3d_icon-4-service-doctor-template.svg",
+        "price": 100
+    },
+    {
+        "id": "5",
+        "service_name": "Ophthalmology",
+        "des": "Lorem ipsum dolor sit amet, consectetur adipiscing elitTristique libero viverra ultricies commodo",
+        "img":"https://assets.website-files.com/601819adb4e32792f49cb4f2/601891c85d13c5e612f7a446_icon-5-service-doctor-template.svg",
+        "price": 100
+    },
+    {
+        "id": "6",
+        "service_name": "Ophthalmology",
+        "des": "Lorem ipsum dolor sit amet, consectetur adipiscing elitTristique libero viverra ultricies commodo",
+        "img":"https://assets.website-files.com/601819adb4e32792f49cb4f2/6018915219e87547acff4b70_icon-6-service-doctor-template.svg",
+        "price": 100
+    }
+]
