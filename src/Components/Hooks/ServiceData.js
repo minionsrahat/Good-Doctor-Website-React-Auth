@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 const useServices=()=>{
-
     const [services, setServices]=useState([]);
     useEffect(()=>{
         fetch('services.json')
@@ -12,5 +11,4 @@ const useServices=()=>{
      return [services, setServices];
 
 }
-
 export default useServices;

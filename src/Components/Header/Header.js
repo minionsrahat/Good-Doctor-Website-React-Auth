@@ -1,7 +1,18 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { NavLink, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 import './Header.css'
 const Header = () => {
+    const navigate=useNavigate();
+    const goSingupPage=()=>{
+        navigate('/signup')
+    }
+    const goLoginPage=()=>{
+        navigate('/login')
+    }
+    const [user, loading, error] = useAuthState(auth)
+
     return (
         <div className="header w-nav"
             data-collapse="medium"
@@ -24,8 +35,7 @@ const Header = () => {
                         <a
                             href="/"
                             className="brand w-nav-brand w--current"
-                            aria-label="home"
-                        >
+                            aria-label="home">
                             <img
                                 alt=''
                                 src="https://assets.website-files.com/601819adb4e3273e5e9cb4e0/601839a525b0824fdb1566b0_logo-doctor-template.svg"
@@ -48,17 +58,20 @@ const Header = () => {
                                     <NavLink to="/contact-us" className="nav-link ">Contact Us</NavLink>
                                 </li>
                                 <li className="nav-item-wrapper header-button-mobile">
-                                    <NavLink to="/signup" className="button-primary bg-secondary-1 header-button-mobile w-button mb-1">Sign Up</NavLink>
-                                    <NavLink to="/login" className="button-primary bg-secondary-1 header-button-mobile w-button mb-1">Log In</NavLink>
+                                 
+
+
+
+                                    <button onClick={goSingupPage} className="button-primary bg-secondary-1 header-button-mobile w-button mb-1">Sign Up</button>
+                                    <button onClick={goLoginPage} className="button-primary bg-secondary-1 header-button-mobile w-button ">Log In</button>
                                 </li>
                             </ul>
                         </nav>
                     </div>
                     <div className="split-content header-left">
 
-                        <NavLink to="/signup" className="button-primary bg-secondary-1 header-button w-button me-1">Sign Up</NavLink>
-                        <NavLink to="/login" className="button-primary bg-secondary-1 header-button w-button ">Log In</NavLink>
-
+                        <button onClick={goSingupPage} className="button-primary bg-secondary-1 header-button w-button me-1">Sign Up</button>
+                        <button onClick={goLoginPage} className="button-primary bg-secondary-1 header-button w-button ">Log In</button>
                         <div
                             className="menu-button w-nav-button"
                             aria-label="menu"

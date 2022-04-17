@@ -1,5 +1,5 @@
 import React from 'react';
-import useServices from '../Hooks/ReviewsData';
+import useServices from '../Hooks/ServiceData';
 import Service from '../Service/Service';
 
 const ServiceList = () => {
