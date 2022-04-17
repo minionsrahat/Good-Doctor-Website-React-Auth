@@ -164,48 +164,7 @@ const Footer = () => {
                                 Duis aute irure dolor in reprehenderit in voluptate velit esse
                                 cillum dolore eu fugiat nulla pariatur.
                             </p>
-                            <div className="footer-newsletter-form-block w-form">
-                                <form
-                                    id="wf-form-Footer-Newsletter"
-                                    name="wf-form-Footer-Newsletter"
-                                    data-name="Footer Newsletter"
-                                    method="get"
-                                    className="footer-newsletter-form"
-                                    aria-label="Footer Newsletter"
-                                >
-                                    <input
-                                        type="email"
-                                        className="input footer-newsletter w-input"
-                                        maxlength="256"
-                                        name="Footer-Newsletter"
-                                        data-name="Footer Newsletter"
-                                        placeholder="example@youremail.com"
-                                        id="Footer-Newsletter"
-                                        required=""
-                                    /><input
-                                        type="submit"
-                                        value="Subscribe"
-                                        data-wait="Please wait..."
-                                        className="button-primary bg-secondary-1 footer-newsletter-button w-button"
-                                    />
-                                </form>
-                                <div
-                                    className="success-message w-form-done"
-                                    tabindex="-1"
-                                    role="region"
-                                    aria-label="Footer Newsletter success"
-                                >
-                                    <div>Thanks for joining Our newsletter.</div>
-                                </div>
-                                <div
-                                    className="error-message w-form-fail"
-                                    tabindex="-1"
-                                    role="region"
-                                    aria-label="Footer Newsletter failure"
-                                >
-                                    <div>Oops! Something went wrong.</div>
-                                </div>
-                            </div>
+                          
                         </div>
                     </div>
                 </div>
