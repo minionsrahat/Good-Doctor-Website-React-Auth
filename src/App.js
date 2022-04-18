@@ -8,6 +8,7 @@ import Home from './Components/Home/Home';
 import Notfound from './Components/NotFound/Notfound';
 import ServiceList from './Components/ServiceList/ServiceList';
 import Signup from './Components/Signup/Signup';
+import Login from './Components/Login/Login';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
            <Route path="/services" element={<ServiceList></ServiceList>}></Route>
            <Route path="/about" element={<About></About>}></Route>
            <Route path="/signup" element={<Signup></Signup>}></Route>
+           <Route path="/login" element={<Login></Login>}></Route>
            <Route path="*" element={<Notfound></Notfound>}></Route>
         </Routes>
         <Footer></Footer>

@@ -1,26 +1,31 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+// import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import auth from '../../firebase.init';
+import GoogleButton from 'react-google-button'
 
 const Signup = () => {
     const [mail, setMail] = useState('');
     const [password, setPassword] = useState('');
     const [cpass, setConfirmPassword] = useState('');
-    const [error, setError] = useState('');
+    // const [error, setError] = useState('');
     const navigate = useNavigate();
-
-
-
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         hookerror] = useCreateUserWithEmailAndPassword(auth);
 
+    const provider = new GoogleAuthProvider();
+
+    // const [signInWithGoogle, googleUser, googleloading, googleerror] = useSignInWithGoogle(auth);
+  
     if (user) {
         navigate('/');
     }
+  
 
     const handleUserMail = (e) => {
         setMail(e.target.value);
@@ -34,10 +39,23 @@ const Signup = () => {
 
     const handleFormsubmit = (e) => {
         e.preventDefault();
-        console.log(mail,password);
+        console.log(mail, password);
         if (password === cpass) {
             createUserWithEmailAndPassword(mail, password)
         }
+    }
+
+    const handleGoogleButton=()=>{
+        signInWithPopup(auth, provider)
+        .then((result) => {
+          const credential = GoogleAuthProvider.credentialFromResult(result);
+          console.log( result.user);
+          // ...
+        }).catch((error) => {
+          // Handle Errors here.
+          console.log(error.message);
+        
+        });
     }
 
     return (
@@ -46,58 +64,38 @@ const Signup = () => {
                 <div className="container-default w-container">
                     <div
                         data-w-id="30ebb2db-5ea0-447c-109a-4ec2ae25da3f"
-                        className="contact-title-wrapper"
-                    >
-                        <div className="subtitle">Contact Me</div>
+                        className="contact-title-wrapper">
                         <h1 data-w-id="Heading 14" className="title contact">
-                            Get in touch today
+                            Sign Up
                         </h1>
                     </div>
                     <div className="card bg-neutral-200 contact">
                         <div className="row">
-                            <div className="col-md-6">
+                            <div className="col-md-4 d-flex align-items-center">
                                 <div className="split-content card-contact-left">
                                     <div className="card-contact-title-wrapper">
                                         <h2 className="title card-contact">
-                                            Have questions? <br />We are ready to assist you
+                                            Sign Up With <br /> Socical Media
                                         </h2>
-                                        <p className="paragraph card-contact">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis id
-                                            sodales enim, venenatislo.
-                                        </p>
+
                                     </div>
                                     <div className="w-layout-grid card-contact-grid">
-                                        <a
-                                            href="tel:(487)120-7980"
-                                            className="card-contact-link w-inline-block"
-                                        ><img
-                                                src="https://assets.website-files.com/601819adb4e3273e5e9cb4e0/601b0a4bc00c7e5cce79deed_icon-1-contact-link-doctor-template.svg"
-                                                alt="Phone Icon - Doctor Webflow Template"
-                                                className="image card-contact-link-icon"
-                                            />
-                                            <div>(487) 120 - 7980</div></a
-                                        ><a
-                                            href="mailto:contact@doctors.com"
-                                            className="card-contact-link w-inline-block"
-                                        ><img
-                                                src="https://assets.website-files.com/601819adb4e3273e5e9cb4e0/601b0a4bf781bcf2d0c5da9f_icon-2-contact-link-doctor-template.svg"
-                                                alt="Email Icon - Doctor Webflow Template"
-                                                className="image card-contact-link-icon"
-                                            />
-                                            <div>contact@doctors.com</div></a
-                                        >
+                                        <GoogleButton
+                                            onClick={handleGoogleButton}
+                                        />
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-6">
+                            <div className="col-md-8 d-flex justify-content-center">
                                 <div className="split-content card-contact-right">
                                     <div className="contact-form-block w-form">
-                                        <form onSubmit={handleFormsubmit} id="signup-Form" action='/'  className="contact-form-grid">
+                                        <form onSubmit={handleFormsubmit} id="signup-Form" action='/' className="contact-form-grid">
                                             <div className="input-wrapper">
                                                 <label htmlFor="name">Your Name</label
                                                 ><input
                                                     type="text"
                                                     className="input w-input"
+                                                    placeholder='minions rahat'
                                                     required
                                                 />
                                             </div>
@@ -107,6 +105,7 @@ const Signup = () => {
                                                     type="email"
                                                     onBlur={handleUserMail}
                                                     className="input w-input"
+                                                    placeholder='example@gmail.com'
                                                     required
                                                 />
                                             </div>
@@ -115,7 +114,7 @@ const Signup = () => {
                                                 ><input
                                                     type="password"
                                                     onBlur={handleUserPassword}
-                                                    className="input w-input" 
+                                                    className="input w-input"
                                                     id="password"
                                                     required
                                                 />
@@ -126,7 +125,7 @@ const Signup = () => {
                                                 <input
                                                     type="password"
                                                     onBlur={handleUserConfirmPassword}
-                                                    className="input w-input" 
+                                                    className="input w-input"
                                                     id="cpassword"
                                                     required
                                                 />

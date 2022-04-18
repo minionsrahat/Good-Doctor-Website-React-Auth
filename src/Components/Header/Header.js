@@ -2,14 +2,18 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import { signOut } from 'firebase/auth';
 import './Header.css'
 const Header = () => {
-    const navigate=useNavigate();
-    const goSingupPage=()=>{
+    const navigate = useNavigate();
+    const goSingupPage = () => {
         navigate('/signup')
     }
-    const goLoginPage=()=>{
+    const goLoginPage = () => {
         navigate('/login')
+    }
+    const logout = () => {
+        signOut(auth);
     }
     const [user, loading, error] = useAuthState(auth)
 
@@ -58,20 +62,31 @@ const Header = () => {
                                     <NavLink to="/contact-us" className="nav-link ">Contact Us</NavLink>
                                 </li>
                                 <li className="nav-item-wrapper header-button-mobile">
-                                 
 
 
-
-                                    <button onClick={goSingupPage} className="button-primary bg-secondary-1 header-button-mobile w-button mb-1">Sign Up</button>
-                                    <button onClick={goLoginPage} className="button-primary bg-secondary-1 header-button-mobile w-button ">Log In</button>
+                                    {
+                                        user ? <>
+                                            <button onClick={logout} className="button-primary bg-secondary-1 header-button-mobile w-button mb-1">Sign Out</button>
+                                        </> : <>
+                                            <button onClick={goSingupPage} className="button-primary bg-secondary-1 header-button-mobile w-button mb-1">Sign Up</button>
+                                            <button onClick={goLoginPage} className="button-primary bg-secondary-1 header-button-mobile w-button ">Log In</button>
+                                        </>
+                                    }
                                 </li>
                             </ul>
                         </nav>
                     </div>
                     <div className="split-content header-left">
 
-                        <button onClick={goSingupPage} className="button-primary bg-secondary-1 header-button w-button me-1">Sign Up</button>
-                        <button onClick={goLoginPage} className="button-primary bg-secondary-1 header-button w-button ">Log In</button>
+                        {
+                            user ? <>
+                                <button onClick={logout} className="button-primary bg-secondary-1 header-button w-button mb-1">Sign Out</button>
+                            </> : <>
+                                <button onClick={goSingupPage} className="button-primary bg-secondary-1 header-button w-button me-1">Sign Up</button>
+                                <button onClick={goLoginPage} className="button-primary bg-secondary-1 header-button w-button ">Log In</button>
+                            </>
+                        }
+
                         <div
                             className="menu-button w-nav-button"
                             aria-label="menu"
