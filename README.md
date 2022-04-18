@@ -1,6 +1,6 @@
 # Welcome to My Good Doctor Website
 
-Live Site Link: [https://cool-makeup-maven.netlify.app/](https://cool-makeup-maven.netlify.app/).
+Live Site Link: [https://good-doctor-1080a.web.app/](https://good-doctor-1080a.web.app/).
 
 Description:
 
