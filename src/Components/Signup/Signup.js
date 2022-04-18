@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword, useSignInWithGithub } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 // import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import auth from '../../firebase.init';
@@ -23,13 +23,19 @@ const Signup = () => {
 
     const [signInWithGithub, githubuser, githuberror] = useSignInWithGithub(auth);
 
-    // const [signInWithGoogle, googleUser, googleloading, googleerror] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, googleUser, googleloading, googleerror] = useSignInWithGoogle(auth);
   
     useEffect(() => {
         if (user) {
             navigate('/');
         }
     }, [user])
+
+    useEffect(() => {
+        if (googleUser) {
+            navigate('/');
+        }
+    }, [googleUser])
 
     useEffect(() => {
         if (githubuser) {
@@ -57,16 +63,7 @@ const Signup = () => {
     }
 
     const handleGoogleButton=()=>{
-        signInWithPopup(auth, provider)
-        .then((result) => {
-          const credential = GoogleAuthProvider.credentialFromResult(result);
-          console.log( result.user);
-          // ...
-        }).catch((error) => {
-          // Handle Errors here.
-          console.log(error.message);
-        
-        });
+        signInWithGoogle()
     }
 
     const handleGithubButton=()=>{
