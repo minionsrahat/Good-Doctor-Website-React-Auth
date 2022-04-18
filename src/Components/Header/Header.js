@@ -18,9 +18,9 @@ const Header = () => {
     const [user, loading, error] = useAuthState(auth)
 
 
-    if(loading){
-        return 'Loading'
-    }
+    // if(loading){
+    //     return 'Loading'
+    // }
 
     return (
         <div className="header w-nav"

@@ -1,0 +1,8 @@
+#carouselExampleCaptions img{
+    height: 700px !important;
+    width: 100%;
+}
+
+#carouselExampleCaptions .carousel-caption{
+    color:#12b2b2 !important;
+}

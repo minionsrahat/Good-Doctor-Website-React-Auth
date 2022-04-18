@@ -33,6 +33,30 @@ const Blogs = () => {
                             Cloud Storage Easily store and serve user-generated content as your application matures from prototype to production-ready state.
                         </p>
                     </div>
+                    <div class="col-10 mx-auto">
+                        <h5> 3. Why are you using firebase? What other options do you have to implement authentication?</h5>
+                        <p>
+                        Firebase Authentication enables you to authenticate users in your app using backend services, simple-to-use SDKs, and pre-built UI libraries. It works with passwords, phone numbers, and prominent federated identity providers such as Google, Facebook, and Twitter, among others.
+                        </p>
+                        <p>Different options to implement authentication</p>
+                        <ul>
+                            <li>
+                                <strong>Password-based authentication</strong>
+                            </li>
+                            <li>
+                                <strong>Multi-factor authentication</strong>
+                            </li>
+                            <li>
+                                <strong>Certificate-based authentication</strong>
+                            </li>
+                            <li>
+                                <strong>Biometric authentication</strong>
+                            </li>
+                            <li>
+                                <strong>Token-based authentication</strong>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 

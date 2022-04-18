@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Banner = () => {
+    const navigate=useNavigate();
     return (
         <div>
             <section class="section home-hero wf-section">
@@ -12,13 +14,12 @@ const Banner = () => {
                             <div class="subtitle">Dr. Matthew Anderson</div>
                             <h1 class="title home-hero">A dedicated doctor you can trust</h1>
                             <p class="paragraph home-hero">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Elementum eget vel, nunc nulla feugiat. Metus ut ultricies
-                                faucibus.
+                            Aim to implement my expertise in the field of medicine to cure the sick community and regain the state of health and well-being, along with spreading awareness amongst the masses for the various ways to maintain hygiene and good health, thereby providing name, fame and money to the hospital
                             </p>
-                            <a href="/plans" class="button-primary bg-secondary-1 w-button"
-                            >Book an Appointment</a
-                            >
+                            <button onClick={()=>navigate('/services')} class="button-primary bg-secondary-1 w-button">
+                            Book an Appointment
+                            </button>
+                          
                         </div>
                         <div class="split-content home-hero-right">
                             <div

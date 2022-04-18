@@ -17,10 +17,7 @@ const Footer = () => {
                                 alt="Doctor Webflow Template - Logo"
                                 className="footer-logo"
                             /></a>
-                        <p className="paragraph-small footer-top-content">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sit amet
-                            dolor eiusmod tempor incididunt ut labore et dolore magna.
-                        </p>
+                       
                     </div>
                     <div className="divider footer-divider-1"></div>
                     <div className="w-layout-grid footer-grid">
@@ -45,88 +42,24 @@ const Footer = () => {
                                         <li className="footer-nav-link-item">
                                             <a href="/services" className="footer-nav-link">Services</a>
                                         </li>
+                                    
                                         <li className="footer-nav-link-item">
-                                            <a
-                                                href="https://doctortemplate.webflow.io/service/general"
-                                                className="footer-nav-link"
-                                            >Services Single</a
-                                            >
+                                            <a href="/blogs" className="footer-nav-link">Blog</a>
                                         </li>
-                                        <li className="footer-nav-link-item">
-                                            <a href="/blog" className="footer-nav-link">Blog</a>
-                                        </li>
-                                        <li className="footer-nav-link-item">
-                                            <a
-                                                href="https://doctortemplate.webflow.io/blog/how-to-choose-the-right-pediatrician-7-things-to-consider"
-                                                className="footer-nav-link"
-                                            >Blog Post</a
-                                            >
-                                        </li>
+                                      
                                     </ul>
                                     <ul className="footer-nav-links last w-list-unstyled">
                                         <li className="footer-nav-link-item">
                                             <a href="/contact" className="footer-nav-link">Contact</a>
                                         </li>
                                         <li className="footer-nav-link-item">
-                                            <a href="/plans" className="footer-nav-link">Plans</a>
+                                            <a href="/services" className="footer-nav-link">Plans</a>
                                         </li>
-                                        <li className="footer-nav-link-item">
-                                            <a
-                                                href="https://doctortemplate.webflow.io/product/premium"
-                                                className="footer-nav-link"
-                                            >Plans Single</a
-                                            >
-                                        </li>
+                                        
                                     </ul>
                                 </div>
                             </div>
-                            <div
-                                data-w-id="31cd8168-d665-d753-61e6-1407f70575a2"
-                                className="footer-nav-box">
-                                <h2 className="title footer-title">Utility Pages</h2>
-                                <div className="footer-nav-content">
-                                    <ul className="footer-nav-links last w-list-unstyled">
-                                        <li className="footer-nav-link-item">
-                                            <a
-                                                href="/utility-pages/style-guide"
-                                                className="footer-nav-link"
-                                            >Style Guide</a
-                                            >
-                                        </li>
-                                        <li className="footer-nav-link-item">
-                                            <a
-                                                href="https://doctortemplate.webflow.io/401"
-                                                className="footer-nav-link"
-                                            >Password Protected</a
-                                            >
-                                        </li>
-                                        <li className="footer-nav-link-item">
-                                            <a
-                                                href="https://doctortemplate.webflow.io/404"
-                                                className="footer-nav-link"
-                                            >404 Not Found</a
-                                            >
-                                        </li>
-                                        <li className="footer-nav-link-item">
-                                            <a
-                                                href="/utility-pages/start-here"
-                                                className="footer-nav-link"
-                                            >Start Here</a
-                                            >
-                                        </li>
-                                        <li className="footer-nav-link-item">
-                                            <a href="/utility-pages/licenses" className="footer-nav-link"
-                                            >Licenses</a
-                                            >
-                                        </li>
-                                        <li className="footer-nav-link-item">
-                                            <a href="/utility-pages/changelog" className="footer-nav-link"
-                                            >Changelog</a
-                                            >
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                        
                             <div
                                 data-w-id="1883cb68-1231-c843-1f3a-b9b495d60891"
                                 className="footer-nav-box last">
@@ -135,7 +68,7 @@ const Footer = () => {
                                     <ul className="footer-nav-links last w-list-unstyled">
                                         <li className="footer-nav-link-item">
                                             <p className="paragraph-small footer-address">
-                                                24 Broadcast Drive Charlotte &nbsp;NC 28202, USA
+                                               Chittagong, Bangladesh
                                             </p>
                                         </li>
                                         <li className="footer-nav-link-item">
@@ -147,7 +80,7 @@ const Footer = () => {
                                         </li>
                                         <li className="footer-nav-link-item">
                                             <a href="tel:(487)120-7980" className="footer-nav-link"
-                                            >(487) 120 - 7980</a
+                                            >00XXXXXXXX</a
                                             >
                                         </li>
                                     </ul>
@@ -157,12 +90,8 @@ const Footer = () => {
                         <div
                             data-w-id="f88c9cfd-8b7f-7c25-bb79-bfc16f68f5c5"
                             className="footer-newsletter-wrapper">
-                            <h2 className="title footer-newsletter">
-                                Subscribe to our Newsletter
-                            </h2>
                             <p className="paragraph-small footer-newsletter">
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur.
+                            There are only two sorts of doctors: those who practice with their brains, and those who practice with their tongues
                             </p>
                           
                         </div>
@@ -176,17 +105,8 @@ const Footer = () => {
 
                     >
                         <div className="paragraph-small small-print">
-                            Copyright &nbsp;© Doctor | Designed by
-                            <a
-                                href="https://brixtemplates.com/"
-
-                                className="link-white"
-                            >BRIX Templates</a
-                            >
-                            - Powered by
-                            <a href="https://webflow.com/" className="link-white"
-                            >Webflow</a
-                            >
+                            Copyright &nbsp;© Rahat | Designed by Minions Rahat
+                           
                         </div>
                         <div className="w-layout-grid footer-social-media-grid">
                             <a

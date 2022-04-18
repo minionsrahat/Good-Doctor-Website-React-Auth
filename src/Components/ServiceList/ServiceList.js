@@ -13,9 +13,9 @@ const ServiceList = () => {
         <div
           data-w-id="e2d261c4-a6ac-ecfb-3bd2-5ffa3b526351"
           class="container-medium-885px services">
-          <div class="subtitle">Specialities</div>
+       
           <h1 data-w-id="Heading 14" class="title services">
-            Experienced in multiple medical practices
+          My Services
           </h1>
         </div>
         <div class="container-default w-container">

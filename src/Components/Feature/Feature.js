@@ -19,8 +19,7 @@ const Feature = () => {
               <div class="card-home-feature-content">
                 <h2 class="title card-home-feature">24 hour service</h2>
                 <p class="paragraph-small">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  aliquet in
+                  
                 </p>
               </div>
             </div>
@@ -36,8 +35,7 @@ const Feature = () => {
               <div class="card-home-feature-content">
                 <h2 class="title card-home-feature">8 years of experience</h2>
                 <p class="paragraph-small">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  aliquet in
+                 
                 </p>
               </div>
             </div>
@@ -53,8 +51,7 @@ const Feature = () => {
               <div class="card-home-feature-content">
                 <h2 class="title card-home-feature">High quality care</h2>
                 <p class="paragraph-small">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  aliquet in
+                 
                 </p>
               </div>
             </div>

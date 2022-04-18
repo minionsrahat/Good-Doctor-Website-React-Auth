@@ -17,7 +17,7 @@ const Signup = () => {
         createUserWithEmailAndPassword,
         user,
         loading,
-        hookerror] = useCreateUserWithEmailAndPassword(auth);
+        hookerror] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
 
     const provider = new GoogleAuthProvider();
 

@@ -2,43 +2,43 @@
     {
         "id": "1",
         "service_name": "Pediatrics",
-        "des": "Lorem ipsum dolor sit amet, consectetur adipiscing elitTristique libero viverra ultricies commodo",
+        "des": "Offer a full scope of services for children from birth to 18 years of age, meeting their evolving healthcare needs as they grow into adulthood.",
         "img":"https://assets.website-files.com/601819adb4e32792f49cb4f2/6018923503ea2e48b94fed5f_icon-2-service-doctor-template.svg",
-        "price": 100
+        "price": 20
     },
     {
         "id": "2",
         "service_name": "General",
-        "des": "Lorem ipsum dolor sit amet, consectetur adipiscing elitTristique libero viverra ultricies commodo",
+        "des": "Prevention, diagnosis and treatment of the most common diseases.Emergency and emergency medical care;",
         "img":"https://assets.website-files.com/601819adb4e32792f49cb4f2/60189629d9c89fdf95fc6209_icon-1-service-doctor-template.svg",
-        "price": 100
+        "price": 10
     },
     {
         "id": "3",
         "service_name": "Nutrition",
-        "des": "Lorem ipsum dolor sit amet, consectetur adipiscing elitTristique libero viverra ultricies commodo",
+        "des": "Offer Cardiac Nutrition therapy,Cancer nutritional status assessment, dietary management after chemotherapy, Nutritional care before and after dialysis",
         "img":"https://assets.website-files.com/601819adb4e32792f49cb4f2/601891f207f3790dc88a5f25_icon-3-service-doctor-template.svg",
-        "price": 100
+        "price": 20
     },
      {
         "id": "4",
         "service_name": "Cardiology",
-        "des": "Lorem ipsum dolor sit amet, consectetur adipiscing elitTristique libero viverra ultricies commodo",
+        "des": "A cardiologist specializes in diagnosing and treating diseases of the cardiovascular system.",
         "img":"https://assets.website-files.com/601819adb4e32792f49cb4f2/601891de197503761bd86d3d_icon-4-service-doctor-template.svg",
-        "price": 100
+        "price": 50
     },
     {
         "id": "5",
         "service_name": "Ophthalmology",
-        "des": "Lorem ipsum dolor sit amet, consectetur adipiscing elitTristique libero viverra ultricies commodo",
+        "des": "Completed specialist training in medicine and surgery of the eyes.Carry out eye tests, diagnose and treat all eye diseases and perform eye surgery.",
         "img":"https://assets.website-files.com/601819adb4e32792f49cb4f2/601891c85d13c5e612f7a446_icon-5-service-doctor-template.svg",
-        "price": 100
+        "price": 20
     },
     {
         "id": "6",
-        "service_name": "Ophthalmology",
-        "des": "Lorem ipsum dolor sit amet, consectetur adipiscing elitTristique libero viverra ultricies commodo",
+        "service_name": "Orthopedics",
+        "des": " Orthopedics, or orthopedic services, aim at the treatment of the musculoskeletal system. This includes your bones, joints, ligaments, tendons, and muscles",
         "img":"https://assets.website-files.com/601819adb4e32792f49cb4f2/6018915219e87547acff4b70_icon-6-service-doctor-template.svg",
-        "price": 100
+        "price": 25
     }
 ]
