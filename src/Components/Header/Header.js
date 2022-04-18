@@ -4,6 +4,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
 import './Header.css'
+import Spinner from '../Spinner/Spinner';
 const Header = () => {
     const navigate = useNavigate();
     const goSingupPage = () => {
@@ -18,9 +19,9 @@ const Header = () => {
     const [user, loading, error] = useAuthState(auth)
 
 
-    // if(loading){
-    //     return 'Loading'
-    // }
+    if(loading){
+        return <Spinner></Spinner>
+    }
 
     return (
         <div className="header w-nav"
