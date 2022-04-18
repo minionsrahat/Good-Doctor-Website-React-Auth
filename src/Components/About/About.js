@@ -1,4 +1,5 @@
 import React from 'react';
+import rahat from './rahat-removebg-preview.png'
 
 const About = () => {
     return (
@@ -12,15 +13,10 @@ const About = () => {
                                 className="image-wrapper home-about"
                             >
                                 <img
-                                    src="https://assets.website-files.com/601819adb4e3273e5e9cb4e0/601862fe9c7a54a2e64aece4_image-home-about-doctor-template.jpg"
-                                    srcset="
-                    https://assets.website-files.com/601819adb4e3273e5e9cb4e0/601862fe9c7a54a2e64aece4_image-home-about-doctor-template-p-500.jpeg   500w,
-                    https://assets.website-files.com/601819adb4e3273e5e9cb4e0/601862fe9c7a54a2e64aece4_image-home-about-doctor-template-p-800.jpeg   800w,
-                    https://assets.website-files.com/601819adb4e3273e5e9cb4e0/601862fe9c7a54a2e64aece4_image-home-about-doctor-template-p-1080.jpeg 1080w,
-                    https://assets.website-files.com/601819adb4e3273e5e9cb4e0/601862fe9c7a54a2e64aece4_image-home-about-doctor-template.jpg         1172w
-                  "
+                                    src={rahat}
+
                                     sizes="(max-width: 479px) 93vw, (max-width: 767px) 90vw, (max-width: 991px) 586px, (max-width: 1919px) 46vw, 643.1953125px"
-                                    alt="The Doctor Mission - Doctor Webflow Template"
+                                    alt=""
                                     className="image home-about"
                                 />
                                 <div
@@ -47,19 +43,16 @@ const About = () => {
                             className="split-content home-about-right"
                         >
                             <div className="subtitle">About Me</div>
-                            <h2>A dedicated doctor with the core mission to help</h2>
+                            <h2>A dedicated developer with the core mission to help</h2>
                             <p className="paragraph home-about">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam
-                                proin nibh cursus at sed sagittis amet, sed. Tristique id nibh
-                                lobortis nunc elementum. Tellus quam mauris aenean turpis
-                                vulputate sodales nullam lobortis. Vulputate tortor tincidun.
+                                Strong experience in software development and has excellent interpersonal and analytical skills
+                                looking to secure a position as a Software engineer in a fast-paced organization where I can use
+                                my skills to the company's advantage while having the scope to develop my own skills. I wish to
+                                work with a diverse team that works towards contributing to the company’s vision and goals.
                             </p>
                             <div className="_2-buttons home-about">
-                                <a href="/plans" className="button-primary home-about w-button"
-                                >Book an Appointment</a
-                                ><a href="/about" className="button-secondary home-about w-button"
-                                >About Me</a
-                                >
+                                <button className="button-primary home-about w-button">Hire Me</button>
+
                             </div>
                         </div>
                     </div>
