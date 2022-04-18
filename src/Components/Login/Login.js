@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-// import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import {signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import GoogleButton from 'react-google-button'
+import GithubButton from 'react-github-login-button'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -21,17 +20,32 @@ const Login = () => {
         hookerror,
     ] = useSignInWithEmailAndPassword(auth);
 
-    const provider = new GoogleAuthProvider();
-    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
 
-    // const [signInWithGoogle, googleUser, googleloading, googleerror] = useSignInWithGoogle(auth);
+
+
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+    const [signInWithGoogle, googleUser, googleloading, googleerror] = useSignInWithGoogle(auth);
+    const [signInWithGithub, githubuser, githuberror] = useSignInWithGithub(auth);
+
     const location=useLocation()
     const from=location.state?.from?.pathname || '/'
     useEffect(() => {
         if (user) {
-            navigate(from,{replace:true});
+            navigate('/');
         }
     }, [user])
+
+    useEffect(() => {
+        if (googleUser) {
+            navigate('/');
+        }
+    }, [googleUser])
+
+    useEffect(() => {
+        if (githubuser) {
+            navigate('/');
+        }
+    }, [githubuser])
 
 
     const handleUserMail = (e) => {
@@ -46,16 +60,11 @@ const Login = () => {
     }
 
     const handleGoogleButton = () => {
-        signInWithPopup(auth, provider)
-            .then((result) => {
-                const credential = GoogleAuthProvider.credentialFromResult(result);
-                console.log(result.user);
-                // ...
-            }).catch((error) => {
-                // Handle Errors here.
-                console.log(error.message);
-
-            });
+       signInWithGoogle()
+    }
+    const handleGithubButton=()=>{
+        signInWithGithub();
+        console.log(githubuser);
     }
 
     const handleResetPassword=async ()=>{
@@ -92,9 +101,10 @@ const Login = () => {
 
                                     </div>
                                     <div className="w-layout-grid card-contact-grid">
-                                        <GoogleButton
+                                    <GoogleButton
                                             onClick={handleGoogleButton}
                                         />
+                                      <GithubButton onClick={handleGithubButton}></GithubButton>
                                     </div>
                                 </div>
                             </div>

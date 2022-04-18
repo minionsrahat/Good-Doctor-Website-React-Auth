@@ -64,7 +64,7 @@ const Header = () => {
                                     <NavLink to="/services" className="nav-link ">Services</NavLink>
                                 </li>
                                 <li className="nav-item-wrapper">
-                                    <NavLink to="/contact-us" className="nav-link ">Contact Us</NavLink>
+                                    <NavLink to="/blogs" className="nav-link ">Blogs</NavLink>
                                 </li>
                                 <li className="nav-item-wrapper header-button-mobile">
 

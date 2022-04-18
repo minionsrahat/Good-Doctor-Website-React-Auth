@@ -11,6 +11,7 @@ import Signup from './Components/Signup/Signup';
 import Login from './Components/Login/Login';
 import Checkout from './Components/Checkout/Checkout';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
+import Blogs from './Components/Blogs/Blogs';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/about" element={<About></About>}></Route>
           <Route path="/signup" element={<Signup></Signup>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
+          <Route path="/blogs" element={<Blogs></Blogs>}></Route>
           <Route path="/checkout" element={
             <RequireAuth>
               <Checkout></Checkout>
