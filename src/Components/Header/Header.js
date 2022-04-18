@@ -16,12 +16,12 @@ const Header = () => {
     const logout = () => {
         signOut(auth);
     }
-    const [user, loading, error] = useAuthState(auth)
+    const [user, loading] = useAuthState(auth)
 
 
-    if(loading){
-        return <Spinner></Spinner>
-    }
+    // if(loading){
+    //     return <Spinner></Spinner>
+    // }
 
     return (
         <div className="header w-nav"
@@ -37,13 +37,13 @@ const Header = () => {
                 <div className="header-contact-wrapper">
                     <a href="tel:(284)587-7800" className="header-contact-link"
                     >01878517664</a
-                    ><a href="/" className="header-contact-link last">contact@doctor.com</a>
+                    ><a href="/" className="header-contact-link last">minions@doctor.com</a>
                 </div>
                 <div className="divider header-divider"></div>
                 <div className="header-wrapper">
                     <div className="split-content header-right">
-                        <a
-                            href="/"
+                        <div
+                    
                             className="brand w-nav-brand w--current"
                             aria-label="home">
                             <img
@@ -51,7 +51,7 @@ const Header = () => {
                                 src="https://assets.website-files.com/601819adb4e3273e5e9cb4e0/601839a525b0824fdb1566b0_logo-doctor-template.svg"
                                 className="header-logo"
                             />
-                        </a>
+                        </div>
                         <nav role="navigation" className="nav-menu w-nav-menu">
                             <ul className="header-navigation">
                                 <li className="nav-item-wrapper">
@@ -68,8 +68,6 @@ const Header = () => {
                                     <NavLink to="/blogs" className="nav-link ">Blogs</NavLink>
                                 </li>
                                 <li className="nav-item-wrapper header-button-mobile">
-
-
                                     {
                                         user ? <>
                                             <button onClick={logout} className="button-primary bg-secondary-1 header-button-mobile w-button mb-1">Sign Out</button>
@@ -83,7 +81,6 @@ const Header = () => {
                         </nav>
                     </div>
                     <div className="split-content header-left">
-
                         {
                             user ? <>
                                 <button onClick={logout} className="button-primary bg-secondary-1 header-button w-button mb-1">Sign Out</button>
@@ -92,7 +89,6 @@ const Header = () => {
                                 <button onClick={goLoginPage} className="button-primary bg-secondary-1 header-button w-button ">Log In</button>
                             </>
                         }
-
                         <div
                             className="menu-button w-nav-button"
                             aria-label="menu"

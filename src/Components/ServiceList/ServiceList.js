@@ -9,18 +9,18 @@ const ServiceList = () => {
   return (
     <div>
 
-      <section class="section services wf-section">
+      <section className="section services wf-section">
         <div
           data-w-id="e2d261c4-a6ac-ecfb-3bd2-5ffa3b526351"
-          class="container-medium-885px services">
+          className="container-medium-885px services">
        
-          <h1 data-w-id="Heading 14" class="title services">
+          <h1 data-w-id="Heading 14" className="title services">
           My Services
           </h1>
         </div>
-        <div class="container-default w-container">
-          <div class="w-dyn-list">
-            <div role="list" class="services-grid w-dyn-items">
+        <div className="container-default w-container">
+          <div className="w-dyn-list">
+            <div role="list" className="services-grid w-dyn-items">
 
               {
                 services.map((item)=>{
@@ -31,7 +31,7 @@ const ServiceList = () => {
             </div>
           </div>
         </div>
-        <div class="bg services"></div>
+        <div className="bg services"></div>
       </section>
     </div>
   );

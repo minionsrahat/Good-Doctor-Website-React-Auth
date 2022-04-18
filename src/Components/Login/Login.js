@@ -31,19 +31,19 @@ const Login = () => {
     const from=location.state?.from?.pathname || '/'
     useEffect(() => {
         if (user) {
-            navigate('/');
+            navigate(from);
         }
     }, [user])
 
     useEffect(() => {
         if (googleUser) {
-            navigate('/');
+            navigate(from);
         }
     }, [googleUser])
 
     useEffect(() => {
         if (githubuser) {
-            navigate('/');
+            navigate(from);
         }
     }, [githubuser])
 
