@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 // import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
@@ -22,10 +22,12 @@ const Signup = () => {
 
     // const [signInWithGoogle, googleUser, googleloading, googleerror] = useSignInWithGoogle(auth);
   
-    if (user) {
-        navigate('/');
-    }
-  
+    useEffect(() => {
+        if (user) {
+            navigate('/');
+        }
+    }, [user])
+
 
     const handleUserMail = (e) => {
         setMail(e.target.value);
@@ -137,25 +139,20 @@ const Signup = () => {
                                                 className="button-primary w-button"
                                             />
                                         </form>
-                                        <div
-                                            className="success-message w-form-done"
-                                            tabIndex="-1"
-                                            role="region"
-                                            aria-label="Contact Form success"
-                                        >
-                                            <div>
-                                                Your message has been submitted. <br />I will get back to you
-                                                within 24-48 hours.
+                                        <div className='mt-4'>
+                                            <p>Already have a account? <Link to='/login'>Log In</Link></p>
+                                          
+                                        </div>
+                                        {hookerror ? <>
+                                            <div
+                                                className="error-message"
+                                                tabindex="-1"
+                                                role="region"
+                                                aria-label="Contact Form failure"
+                                            >
+                                                <div>{hookerror && hookerror?.message}</div>
                                             </div>
-                                        </div>
-                                        <div
-                                            className="error-message w-form-fail"
-                                            tabindex="-1"
-                                            role="region"
-                                            aria-label="Contact Form failure"
-                                        >
-                                            <div>Oops! Something went wrong.</div>
-                                        </div>
+                                        </> : ''}
                                     </div>
                                 </div>
                             </div>

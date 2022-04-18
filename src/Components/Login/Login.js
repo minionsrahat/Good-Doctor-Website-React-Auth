@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 // import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import auth from '../../firebase.init';
 import GoogleButton from 'react-google-button'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const [mail, setMail] = useState('');
@@ -20,6 +22,7 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
 
     const provider = new GoogleAuthProvider();
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
 
     // const [signInWithGoogle, googleUser, googleloading, googleerror] = useSignInWithGoogle(auth);
 
@@ -54,9 +57,20 @@ const Login = () => {
             });
     }
 
+    const handleResetPassword=async ()=>{
+        if(!mail){
+            toast("Oops!! you forgot to enter your mail!");
+        }
+        else{
+            toast('Your reset password link sent to your mail!')
+            await sendPasswordResetEmail(mail);
+        }
+    }
+
     return (
         <>
             <section className="section contact wf-section">
+            <ToastContainer />
                 <div className="container-default w-container">
                     <div
                         data-w-id="30ebb2db-5ea0-447c-109a-4ec2ae25da3f"
@@ -66,6 +80,7 @@ const Login = () => {
                         </h1>
                     </div>
                     <div className="card bg-neutral-200 contact">
+                   
                         <div className="row">
                             <div className="col-md-4 d-flex align-items-center">
                                 <div className="split-content card-contact-left">
@@ -85,9 +100,9 @@ const Login = () => {
                             <div className="col-md-8 d-flex justify-content-center">
                                 <div className="split-content card-contact-right">
                                     <div className="contact-form-block w-form">
-                                        <form onSubmit={handleFormsubmit} id="signup-Form" action='/' className="contact-form-grid">
+                                        <form onSubmit={handleFormsubmit} id="signup-Form" action='/' className="">
 
-                                            <div className="input-wrapper">
+                                            <div className="input-wrapper my-2">
                                                 <label htmlFor="email">Email Address</label
                                                 ><input
                                                     type="email"
@@ -97,7 +112,7 @@ const Login = () => {
                                                     required
                                                 />
                                             </div>
-                                            <div className="input-wrapper">
+                                            <div className="input-wrapper mt-3 mb-3">
                                                 <label htmlFor="Phone">Password</label
                                                 ><input
                                                     type="password"
@@ -107,12 +122,16 @@ const Login = () => {
                                                     required
                                                 />
                                             </div>
-                                            <input
-                                                type="submit"
-                                                value="Log In"
-                                                className="button-primary w-button"
-                                            />
+                                            <div className="text-center">
+                                                <button type="submit" class="button-primary w-button d-block mx-auto">Log In</button>
+                                            </div>
+
                                         </form>
+                                        <div className='mt-2'>
+                                            <p>Dont have a account? <Link to='/signup'>Sign Up</Link></p>
+                                            <p>Forgot password? <span onClick={handleResetPassword} style={{'text-decoration': 'underline', 'cursor': 'pointer'
+                                        }}>Reset Password</span></p>
+                                        </div>
                                         {hookerror ? <>
                                             <div
                                                 className="error-message"
