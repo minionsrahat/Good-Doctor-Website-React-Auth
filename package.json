@@ -10,6 +10,8 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-firebase-hooks": "^5.0.3",
+    "react-github-button": "^0.1.11",
+    "react-github-login-button": "^1.0.1",
     "react-google-button": "^0.7.2",
     "react-icons": "^4.3.1",
     "react-router-dom": "^6.3.0",

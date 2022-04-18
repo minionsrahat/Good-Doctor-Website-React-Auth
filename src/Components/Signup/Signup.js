@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGithub } from 'react-firebase-hooks/auth';
 // import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import auth from '../../firebase.init';
 import GoogleButton from 'react-google-button'
+import GithubButton from 'react-github-login-button'
 
 const Signup = () => {
     const [mail, setMail] = useState('');
@@ -20,6 +21,8 @@ const Signup = () => {
 
     const provider = new GoogleAuthProvider();
 
+    const [signInWithGithub, githubuser, githuberror] = useSignInWithGithub(auth);
+
     // const [signInWithGoogle, googleUser, googleloading, googleerror] = useSignInWithGoogle(auth);
   
     useEffect(() => {
@@ -27,6 +30,12 @@ const Signup = () => {
             navigate('/');
         }
     }, [user])
+
+    useEffect(() => {
+        if (githubuser) {
+            navigate('/');
+        }
+    }, [githubuser])
 
 
     const handleUserMail = (e) => {
@@ -60,6 +69,12 @@ const Signup = () => {
         });
     }
 
+    const handleGithubButton=()=>{
+        signInWithGithub();
+        console.log(githubuser);
+    }
+
+
     return (
         <>
             <section className="section contact wf-section">
@@ -85,6 +100,7 @@ const Signup = () => {
                                         <GoogleButton
                                             onClick={handleGoogleButton}
                                         />
+                                      <GithubButton onClick={handleGithubButton}></GithubButton>
                                     </div>
                                 </div>
                             </div>

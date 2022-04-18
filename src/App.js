@@ -9,6 +9,8 @@ import Notfound from './Components/NotFound/Notfound';
 import ServiceList from './Components/ServiceList/ServiceList';
 import Signup from './Components/Signup/Signup';
 import Login from './Components/Login/Login';
+import Checkout from './Components/Checkout/Checkout';
+import RequireAuth from './Components/RequireAuth/RequireAuth';
 
 
 function App() {
@@ -17,12 +19,17 @@ function App() {
       <div className="page-wrapper">
         <Header></Header>
         <Routes>
-           <Route path="/" element={<Home></Home>}> </Route>
-           <Route path="/services" element={<ServiceList></ServiceList>}></Route>
-           <Route path="/about" element={<About></About>}></Route>
-           <Route path="/signup" element={<Signup></Signup>}></Route>
-           <Route path="/login" element={<Login></Login>}></Route>
-           <Route path="*" element={<Notfound></Notfound>}></Route>
+          <Route path="/" element={<Home></Home>}> </Route>
+          <Route path="/services" element={<ServiceList></ServiceList>}></Route>
+          <Route path="/about" element={<About></About>}></Route>
+          <Route path="/signup" element={<Signup></Signup>}></Route>
+          <Route path="/login" element={<Login></Login>}></Route>
+          <Route path="/checkout" element={
+            <RequireAuth>
+              <Checkout></Checkout>
+            </RequireAuth>
+          }></Route>
+          <Route path="*" element={<Notfound></Notfound>}></Route>
         </Routes>
         <Footer></Footer>
       </div>

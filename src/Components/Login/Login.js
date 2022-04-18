@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 // import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import {signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import auth from '../../firebase.init';
 import GoogleButton from 'react-google-button'
 import { ToastContainer, toast } from 'react-toastify';
@@ -25,10 +25,11 @@ const Login = () => {
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
 
     // const [signInWithGoogle, googleUser, googleloading, googleerror] = useSignInWithGoogle(auth);
-
+    const location=useLocation()
+    const from=location.state?.from?.pathname || '/'
     useEffect(() => {
         if (user) {
-            navigate('/');
+            navigate(from,{replace:true});
         }
     }, [user])
 
@@ -123,7 +124,7 @@ const Login = () => {
                                                 />
                                             </div>
                                             <div className="text-center">
-                                                <button type="submit" class="button-primary w-button d-block mx-auto">Log In</button>
+                                                <button type="submit" className="button-primary w-button d-block mx-auto">Log In</button>
                                             </div>
 
                                         </form>
